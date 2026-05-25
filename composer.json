@@ -1,0 +1,17 @@
+{
+    "name": "nikola/php-28",
+    "autoload": {
+        "psr-4": {
+            "PHP28\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nikolastijepic",
+            "email": "nikola.stijepic94@icloud.com"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*"
+    }
+}
