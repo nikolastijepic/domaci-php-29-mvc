@@ -7,8 +7,7 @@ use PHP28\Services\SessionService;
 
 class UserController extends SessionService
 {
-
-    public function register(array $data)
+    public function register(array $data): void
     {
         if (!isset($data['username'])) {
             die("Niste prosledili username");
@@ -30,13 +29,14 @@ class UserController extends SessionService
             die("Sifre se ne podudaraju");
         }
 
-        $userRegister = new User();
-        if ($userRegister->userExists($data['username'])) {
+        $userModel = new User();
+        if ($userModel->userExists($data['username'])) {
             die("Ovaj korisnik vec postoji!");
         }
 
-        $userRegister = $userRegister->userRegister($data['username'], $data['password']);
+        $userModel->userRegister($data['username'], $data['password']);
     }
+
     public function login(array $data): void
     {
         if (!isset($data['username'])) {
