@@ -4,6 +4,9 @@ require_once "vendor/autoload.php";
 
 use PHP28\Controllers\UserController;
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->Load();
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
